@@ -11,13 +11,14 @@
             --accent: #1a1a1a;
             --secondary: #6c757d;
             --border: #e9ecef;
+            --star-color: #ffd700;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--main-bg);
             background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
-            background-size: 24px 24px; /* Легкая сетка на фоне */
+            background-size: 24px 24px;
             color: var(--accent);
             margin: 0;
             padding: 40px 20px;
@@ -104,7 +105,7 @@
             padding: 40px;
         }
 
-        .detail-item h3 {
+        .detail-item h3, .section-title {
             font-size: 0.75em;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -151,11 +152,81 @@
             filter: grayscale(0%);
         }
 
+        /* Отзывы */
+        .reviews-section {
+            padding: 40px;
+            background: var(--main-bg);
+            border-top: 1px solid var(--border);
+        }
+
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 15px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) transparent;
+        }
+
+        .reviews-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .reviews-container::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .review-card {
+            min-width: 280px;
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            scroll-snap-align: start;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .review-author {
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .star-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .review-text {
+            font-size: 0.9em;
+            color: var(--accent);
+            line-height: 1.5;
+        }
+
         /* Подвал */
         .footer {
             padding: 60px 40px;
             text-align: center;
             background: #fafafa;
+            border-top: 1px solid var(--border);
         }
 
         .phone-link {
@@ -203,6 +274,8 @@
             header h1 { font-size: 2em; }
             .phone-link { font-size: 1.4em; }
             body { padding: 10px; }
+            .hero-box { padding: 0 20px; }
+            .review-card { min-width: 240px; }
         }
     </style>
 </head>
@@ -246,13 +319,89 @@
             </div>
 
             <div class="gallery-section">
-                <h3 style="font-size: 0.75em; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); margin-bottom: 20px;">Галерея</h3>
+                <h3 class="section-title">Галерея</h3>
                 <div class="gallery-grid">
                     <img src="IMG_8154.jpeg" onclick="view(this.src)">
                     <img src="work2.jpg" onclick="view(this.src)">
                 </div>
             </div>
 
+            <div class="reviews-section">
+                <h3 class="section-title">Отзывы клиентов</h3>
+                <div class="reviews-container">
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимно</span>
+                            <div class="review-rating">
+                                5.0 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Недорогая автовышка, хорошо отработала свою задачу. Приехали вовремя, техника в хорошем состоянии. Рекомендую!</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимный клиент</span>
+                            <div class="review-rating">
+                                4.8 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Идеально подошла для обрезки деревьев на участке. Коленчатая стрела очень выручила в труднодоступном месте.</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимно</span>
+                            <div class="review-rating">
+                                5.0 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Заказывали для монтажа рекламного баннера. Водитель — профессионал, всё сделали быстро и без лишних вопросов.</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимный заказчик</span>
+                            <div class="review-rating">
+                                5.0 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Цена адекватная, минимальный заказ 4 часа отработали полностью. Машина надежная, люлька не шатается.</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимно</span>
+                            <div class="review-rating">
+                                4.8 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Оперативная подача техники. Нужно было почистить снег на крыше ангара, высоты 22 метра хватило с запасом.</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимный клиент</span>
+                            <div class="review-rating">
+                                5.0 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Отличный сервис. Маневренная техника, заехала в узкий двор без проблем. Будем обращаться еще!</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-author">Анонимно</span>
+                            <div class="review-rating">
+                                5.0 <img src="Без названия35_20260518194959.png" class="star-icon" alt="star">
+                            </div>
+                        </div>
+                        <div class="review-text">Справились с задачей идеально. Искали вышку для фасадных работ — это оказался лучший вариант по соотношению цена/качество.</div>
+                    </div>
+
+                </div>
+            </div>
             <div class="footer">
                 <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8em; color: var(--secondary);">Свяжитесь с нами</span><br>
                 <a href="tel:+375291870965" class="phone-link">
