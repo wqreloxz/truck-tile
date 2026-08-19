@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аренда Автовышки | Гомель</title>
+    <title>Аренда автовышки в Гомеле 22м — Недорого, без выходных</title>
+    <meta name="description" content="Услуги и аренда автовышки 22 метра в Гомеле и Гомельской области. Коленчатая стрела, грузоподъемность 300 кг. Минимальный заказ от 4 часов. Звоните!">
     <style>
         :root {
             --main-bg: #f8f9fa;
@@ -11,7 +12,6 @@
             --accent: #1a1a1a;
             --secondary: #6c757d;
             --border: #e9ecef;
-            --star-color: #ffd700;
         }
 
         body {
@@ -25,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* Анимация */
         @keyframes reveal {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -48,7 +47,7 @@
 
         header {
             text-align: center;
-            padding: 60px 40px 40px;
+            padding: 60px 40px 30px;
         }
 
         header h1 {
@@ -74,7 +73,45 @@
             text-transform: uppercase;
         }
 
-        /* Главное изображение */
+        .services-nav {
+            padding: 0 40px 30px;
+            text-align: center;
+        }
+
+        .services-nav p {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .services-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .services-links a {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .services-links a:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #fff;
+        }
+
         .hero-box {
             padding: 0 40px;
         }
@@ -90,7 +127,6 @@
             transform: scale(1.02);
         }
 
-        /* Сетка характеристик и цены */
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -126,7 +162,6 @@
             margin-top: 5px;
         }
 
-        /* Галерея */
         .gallery-section {
             padding: 40px;
             background: white;
@@ -152,7 +187,6 @@
             filter: grayscale(0%);
         }
 
-        /* Отзывы */
         .reviews-section {
             padding: 40px;
             background: var(--main-bg);
@@ -221,7 +255,6 @@
             line-height: 1.5;
         }
 
-        /* Подвал */
         .footer {
             padding: 60px 40px;
             text-align: center;
@@ -250,7 +283,6 @@
             margin-right: 15px;
         }
 
-        /* Лайтбокс */
         #lightbox {
             display: none;
             position: fixed;
@@ -296,8 +328,18 @@
                 <h1>Аренда Автовышки</h1>
             </header>
 
+            <div class="services-nav">
+                <p>Услуги по направлениям:</p>
+                <div class="services-links">
+                    <a href="obrezka-dereviev.html">🌳 Обрезка деревьев</a>
+                    <a href="fasadnye-raboty.html">🏢 Фасадные работы</a>
+                    <a href="montazh-reklamy.html">🪧 Монтаж рекламы</a>
+                    <a href="chistka-snega.html">❄️ Чистка снега</a>
+                </div>
+            </div>
+
             <div class="hero-box">
-                <img src="car.png" class="hero-img" onclick="view(this.src)" alt="Автовышка 22м">
+                <img src="car.png" class="hero-img" onclick="view(this.src)" alt="Автовышка 22м в Гомеле">
             </div>
 
             <div class="details-grid">
@@ -402,6 +444,7 @@
 
                 </div>
             </div>
+
             <div class="footer">
                 <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8em; color: var(--secondary);">Свяжитесь с нами</span><br>
                 <a href="tel:+375291870965" class="phone-link">
